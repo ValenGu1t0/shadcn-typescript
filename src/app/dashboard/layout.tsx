@@ -2,22 +2,25 @@
 import Link from "next/link";
 
 const links = [
-  { name: "accordion", href: "accordion" },
-  { name: "alert", href: "alert" },
-  { name: "button", href: "button" },
-  { name: "alertDialog", href: "alertDialog" },
+  { name: "accordion", href: "/dashboard/accordion" },
+  { name: "alert", href: "/dashboard/alert" },
+  { name: "button", href: "/dashboard/button" },
+  { name: "alertDialog", href: "/dashboard/alertDialog" },
+  { name: "dialog", href: "/dashboard/dialog" },
 ];
 
 function DashboardLayout({
   children,
-}: {
+} : {
   children: React.ReactNode;
 }) {
   
   return (
     <>
       <nav className="bg-white border-b border-gray-200 fixed z-30 w-full">
+
         <div className="px-3 py-3 lg:px-5 lg:pl-3">
+          
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-start">
               <button
@@ -102,6 +105,9 @@ function DashboardLayout({
           </div>
         </div>
       </nav>
+
+      {/* --------------------------------------------------------------------------- */}
+
       <div className="flex overflow-hidden bg-white pt-16">
         <aside
           id="sidebar"
@@ -135,6 +141,9 @@ function DashboardLayout({
           id="main-content"
           className="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64"
         >
+
+          {/* --------------------------------------------------------------------------- */}
+
           <main>
             <div className="pt-6 px-4">
               <div className="w-full min-h-[calc(100vh-230px)]">
@@ -144,6 +153,9 @@ function DashboardLayout({
               </div>
             </div>
           </main>
+
+          {/* --------------------------------------------------------------------------- */}
+
           <footer className="bg-white md:flex md:items-center md:justify-between shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4">
             <ul className="flex items-center flex-wrap mb-6 md:mb-0">
               <li>
@@ -270,3 +282,21 @@ function DashboardLayout({
 }
 
 export default DashboardLayout;
+
+
+
+/* Si llego a tener mas rutas base como admin, user, etc: 
+
+
+const basePath = "/dashboard";
+
+const links = [
+  { name: "accordion", href: `${basePath}/accordion` },
+  { name: "alert", href: `${basePath}/alert` },
+  { name: "button", href: `${basePath}/button` },
+  { name: "alertDialog", href: `${basePath}/alertDialog` },
+  { name: "dialog", href: `${basePath}/dialog` },
+];
+
+
+*/

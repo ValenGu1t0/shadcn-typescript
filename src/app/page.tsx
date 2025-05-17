@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import './globals.css';
 
 function Login() {
@@ -24,9 +25,9 @@ function Login() {
         </div>
 
         <div className="flex flex-col gap-2">
-          <button
+          <Link href="/dashboard"
           className='p-4 border-2 border-white rounded-xl cursor-pointer hover:bg-violet-700 '
-          type="submit">Ingresar</button>
+          type="submit">Ingresar</Link>
         </div>
 
         <a href="">¿Olvidaste tu contraseña?</a>
